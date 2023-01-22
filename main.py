@@ -11,9 +11,7 @@ import io
 from PIL import Image
 
 
-from ultralytics.yolo.utils.files import increment_path
-from ultralytics.yolo.v8.detect.predict import DetectionPredictor
-from ultralytics.yolo.engine.predictor import BasePredictor
+
 
 
 # Create the app
@@ -44,8 +42,9 @@ for result in results:
     # cv.rectangle(path,((int(bbox_arr[0]),int(bbox_arr[1]))
 
 # Path to predicted image
-predicted_path = "/Users/doruk/PycharmProjects/yoloV8/ultralytics/runs/detect/predict"
+predicted_path = "/Users/doruk/PycharmProjects/yoloV8/ultralytics/runs/detect/predict/forklıft.jpeg"
 cv.imwrite(predicted_path,img)
+
 cv.imshow("Predicted Image",img)
 
 

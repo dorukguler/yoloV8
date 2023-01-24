@@ -1,11 +1,18 @@
 import ultralytics
 from ultralytics import YOLO
 import cv2 as cv
+import os
+
+
+
+absolute_path = os.path.dirname(__file__)
+relative_path = "best3.pt"
+full_path = os.path.join(absolute_path, relative_path)
 
 
 # Load the model
 def load_weights():
-    weights = r"/Users/doruk/PycharmProjects/yoloV8/best3.pt"
+    weights = f"{full_path}"
     return weights
 
 def predict(img):
@@ -17,5 +24,6 @@ def predict(img):
         bbox_arr = result.boxes.xyxy.numpy()
         cv.rectangle(img, (int(bbox_arr[1][0]), int(bbox_arr[1][1])), (int(bbox_arr[1][2]), int(bbox_arr[1][3])),
                      color=(255, 0, 0), thickness=4)  # ,cv.COLORR[int(bbox_arr[5])], 3)
-        # cv.rectangle(path,((int(bbox_arr[0]),int(bbox_arr[1]))
+        # cv.rectangle(p
+        # ath,((int(bbox_arr[0]),int(bbox_arr[1]))
 

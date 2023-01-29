@@ -2,7 +2,6 @@ import base64
 import numpy as np
 import cv2 as cv
 
-# DECODE ETMEYI UNUTMA
 def img_to_base64(img):
     im_bytes = img.tobytes()
     im_b64 = base64.b64encode(im_bytes)

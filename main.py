@@ -1,19 +1,4 @@
 import uvicorn
-
-import ultralytics
-from ultralytics import YOLO
-import cv2 as cv
-import numpy
-import torch
-import os
-from fastapi import File,FastAPI
-import base64
-from pydantic import BaseModel
-import io
-from PIL import Image
-
-
-# main.py
 from fastapi import FastAPI
 # from models import yolo_model
 from routes.predict import predict_router

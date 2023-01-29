@@ -1,17 +1,10 @@
-import cv2 as cv
-# routes/predict.py
 from fastapi import APIRouter,Body
-from pydantic import BaseModel
-
 import models.yolo
 from utils.converter import base64_to_img
-from utils.converter import img_to_base64
-
 import base64
 
 
 # File to use POST operation with predict functionality
-
 predict_router = APIRouter()
 
 

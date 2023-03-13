@@ -2,15 +2,15 @@ from fastapi import APIRouter,Body,File,UploadFile
 import models.yolo
 from utils.converter import base64_to_img
 import base64
-from fastapi import FastAPI, HTTPException, Response
+from fastapi import FastAPI, HTTPException, Response, Request
 from starlette.responses import FileResponse
 from utils.converter import img_to_base64
 import cv2 as cv
 from typing import Dict, Any
+import io
 
 
-
-# File to use POST operation with predict functionality
+# File to use POST operation with predict18 functionality
 predict_router= APIRouter()
 
 
@@ -55,5 +55,9 @@ async def create_upload_file(file: UploadFile):
     with open(img, "wb") as f:
         f.write(img)
 
-    return FileResponse(img)
+@predict_router.get("/get_file", response_class=FileResponse)
+async def resp():
+    file_path = "/Users/doruk/PycharmProjects/yoloV8/models/best3.pt"
+    # file = open(file_path, mode='rb')
+    return FileResponse(file_path,media_type="application/octet-stream", filename=file_path)
 

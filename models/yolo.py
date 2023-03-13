@@ -19,12 +19,12 @@ def predict(img):
     model = YOLO(load_weights())
     results = model.predict(source=img)
 
-    for result in results:
-        bbox_arr = result.boxes.xyxy
-
-    cv.rectangle(img, (int(bbox_arr[1][0]), int(bbox_arr[1][1])), (int(bbox_arr[1][2]), int(bbox_arr[1][3])),
-                 color=(255, 0, 0), thickness=4)
-
-    response_image = img_to_base64(img)
-    return response_image
-
+    for r in results:
+        boxes = r.boxes
+        for box in boxes:
+            x1, y1, x2, y2 = box.xyxy[0]
+            x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
+            cv.rectangle(img,(x1,y1),(x2,y2),(255,0,0),5)
+    # cv.rectangle(img, (int(bbox_arr[1][0]), int(bbox_arr[1][1])), (int(bbox_arr[1][2]), int(bbox_arr[1][3])),
+    #              color=(255, 0, 0), thickness=4)
+    return img

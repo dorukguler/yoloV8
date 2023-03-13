@@ -21,29 +21,6 @@ if __name__ == "__main__":
 
 
 
-# cv.imwrite(predicted_path,img)
-#
-# cv.imshow("Predicted Image",img)
-#
-#
-# cv.waitKey(0)
-
-# def img_to_base64(file):
-#     with open(file,"rb") as image_file:
-#         return  base64.b64encode(image_file.read()).decode("utf-8")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

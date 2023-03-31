@@ -1,4 +1,3 @@
-import ultralytics
 from ultralytics import YOLO
 import cv2 as cv
 import os
@@ -17,8 +16,7 @@ def load_weights():
 
 def predict(img):
     model = YOLO(load_weights())
-    results = model.predict(source=img)
-
+    results = model.predict(source=img)  # type(results)  -> <class 'list'>
     for r in results:
         boxes = r.boxes
         for box in boxes:

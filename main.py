@@ -1,6 +1,5 @@
 import uvicorn
 from fastapi import FastAPI
-# from models import yolo_model
 from routes.predict import predict_router
 
 app = FastAPI()

@@ -1,9 +1,6 @@
 import base64
 import numpy as np
 import cv2 as cv
-from PIL import Image
-from io import BytesIO
-
 def img_to_base64(img):
     # img = cv.imread(img)
     _, im_arr = cv.imencode('.jpg', img)  # im_arr: image in Numpy one-dim array format.

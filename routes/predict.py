@@ -57,7 +57,7 @@ async def create_upload_file(file: UploadFile):
 
 @predict_router.get("/get_file", response_class=FileResponse)
 async def resp():
-    file_path = "/Users/doruk/PycharmProjects/yoloV8/models/best3.pt"
+    file_path = "/Users/doruk/Documents/yoloV8/models/best3.pt"
     # file = open(file_path, mode='rb')
     return FileResponse(file_path,media_type="application/octet-stream", filename=file_path)
 
